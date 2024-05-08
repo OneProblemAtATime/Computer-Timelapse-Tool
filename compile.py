@@ -45,4 +45,4 @@ def main(image_duration_ms=100):
     compile_videos(video_clips)
 
 if __name__ == "__main__":
-    main(image_duration_ms=50)
+    main(image_duration_ms=1000)
