@@ -16,12 +16,13 @@ def create_timelapse(screen_folder, image_duration_ms):
         return None
 
     clip = ImageSequenceClip(image_files, fps=fps)
-    output_file = f"{screen_folder}_timelapse.mp4"
+    output_file = f"{screen_folder}_timelapse ({timestamp}).mp4"
     clip.write_videofile(output_file, fps=fps)
     print(f"Timelapse video created: {output_file}")
     return output_file  # Returning the output file path for further use
 
 def compile_videos(video_clips):
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     if not video_clips:
         print("No video clips provided for compilation.")
         return
@@ -30,7 +31,7 @@ def compile_videos(video_clips):
     resized_clips = [clip.resize(height=min_height) for clip in video_clips]
 
     final_clip = clips_array([resized_clips])  # Correctly pass the list of lists
-    final_output = "compiled_timelapse.mp4"
+    final_output = f"compiled_timelapse ({timestamp}).mp4"
     final_clip.write_videofile(final_output, codec="libx264", fps=24)
     print(f"Compiled video created: {final_output}")
 
@@ -45,4 +46,4 @@ def main(image_duration_ms=100):
     compile_videos(video_clips)
 
 if __name__ == "__main__":
-    main(image_duration_ms=1000)
+    main(image_duration_ms=50) # Duration of each screenshot in timelapse (in mS).
