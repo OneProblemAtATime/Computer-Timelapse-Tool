@@ -3,6 +3,7 @@ import glob
 from moviepy.editor import ImageSequenceClip, VideoFileClip, clips_array
 
 def create_timelapse(screen_folder, image_duration_ms):
+    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     try:
         fps = 1000.0 / image_duration_ms if image_duration_ms > 0 else 24  # Default to 24 FPS if duration is invalid
     except TypeError:
