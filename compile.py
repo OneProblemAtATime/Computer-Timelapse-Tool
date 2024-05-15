@@ -48,4 +48,4 @@ def main(image_duration_ms=100):
     compile_videos(video_clips)
 
 if __name__ == "__main__":
-    main(image_duration_ms=50) # Duration of each screenshot in timelapse (in mS).
+    main(image_duration_ms=25) # Duration of each screenshot in timelapse (in mS).
