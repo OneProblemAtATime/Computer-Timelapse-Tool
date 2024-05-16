@@ -29,4 +29,4 @@ def capture_screenshots(interval=5):
 
 
 if __name__ == "__main__":
-    capture_screenshots(interval=1)  # Set your desired interval (in seconds) here.
+    capture_screenshots(interval=5)  # Set your desired interval (in seconds) here.
