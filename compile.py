@@ -1,6 +1,6 @@
 import os
 import glob
-from moviepy.editor import ImageSequenceClip, VideoFileClip, clips_array
+from moviepy import ImageSequenceClip, VideoFileClip, clips_array
 from datetime import datetime
 
 def create_timelapse(screen_folder, image_duration_ms):
